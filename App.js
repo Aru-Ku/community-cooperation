@@ -1,7 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 // import 'react-native-gesture-handler';
 import * as React from 'react';
-import {Button} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
