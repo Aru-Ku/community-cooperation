@@ -11,8 +11,14 @@ import {
 import PickerSelect from 'react-native-picker-select';
 import {CheckedIcon, UncheckedIcon} from '../images/svg-icons';
 import Geolocation from '@react-native-community/geolocation';
+import axios from 'axios';
+import {SERVER_URL} from '../../keys';
 
 import {add, userID} from '../lib/utils';
+let serverUrl = SERVER_URL;
+if (serverUrl.endsWith('/')) {
+  serverUrl = serverUrl.slice(0, -1);
+}
 
 const styles = StyleSheet.create({
   outerView: {
@@ -122,7 +128,6 @@ const AddResource = function({navigation}) {
   const sendItem = () => {
     const payload = {
       ...item,
-      // eslint-disable-next-line radix
       quantity: isNaN(item.quantity) ? 1 : parseInt(item.quantity),
     };
 

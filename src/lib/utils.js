@@ -4,7 +4,6 @@ import {SERVER_URL} from '../../keys';
 import DeviceInfo from 'react-native-device-info';
 
 let serverUrl = SERVER_URL;
-console.log(serverUrl);
 if (serverUrl.endsWith('/')) {
   serverUrl = serverUrl.slice(0, -1);
 }

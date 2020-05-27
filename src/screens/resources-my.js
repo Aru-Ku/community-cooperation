@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
+import axios from 'axios';
 
 import {search, userID} from '../lib/utils';
 
@@ -79,7 +80,7 @@ const MyResources = function({navigation}) {
           );
         });
     });
-  }, []);
+  }, [navigation]);
 
   const Item = props => {
     return (
@@ -103,7 +104,7 @@ const MyResources = function({navigation}) {
         style={styles.flatListView}
         data={items}
         renderItem={({item}) => <Item {...item} />}
-        keyExtractor={item => item.id || item['_id']}
+        keyExtractor={item => item.id || item._id}
       />
     );
   } else {
